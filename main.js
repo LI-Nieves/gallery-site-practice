@@ -14,7 +14,8 @@ const altText = ["Close-up of human eye","Rock","Flowers","Heiroglyphics","Butte
 for (let i=0; i < fileNames.length; i++) {
     const image = fileNames[i];
     const newImage = document.createElement('img');
-    newImage.setAttribute('src', `images/${image}.jpg`);
+    // newImage.setAttribute('src', `images/${image}.jpg`);
+    newImage.setAttribute('src', `${image}.jpg`);
     newImage.setAttribute('alt', altText[i]);
     thumbBar.appendChild(newImage);
     newImage.addEventListener("click", () => {
