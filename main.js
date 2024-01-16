@@ -1,3 +1,9 @@
+import pic1 from "./pic1.jpg";
+import pic2 from "./images/pic2.jpg";
+import pic3 from "./images/pic3.jpg";
+import pic4 from "./images/pic4.jpg";
+import pic5 from "./images/pic5.jpg";
+
 const displayedImage = document.querySelector('.displayed-img');
 const thumbBar = document.querySelector('.thumb-bar');
 
@@ -5,7 +11,7 @@ const btn = document.querySelector('button');
 const overlay = document.querySelector('.overlay');
 
 /* Declaring the array of image filenames */
-const fileNames = ["pic1","pic2","pic3","pic4","pic5"];
+const fileNames = [pic1,pic2,pic3,pic4,pic5];
 
 /* Declaring the alternative text for each image file */
 const altText = ["Close-up of human eye","Rock","Flowers","Heiroglyphics","Butterfly"];
@@ -15,7 +21,7 @@ for (let i=0; i < fileNames.length; i++) {
     const image = fileNames[i];
     const newImage = document.createElement('img');
     // newImage.setAttribute('src', `images/${image}.jpg`);
-    newImage.setAttribute('src', `${image}.jpg`);
+    newImage.setAttribute('src', image);
     newImage.setAttribute('alt', altText[i]);
     thumbBar.appendChild(newImage);
     newImage.addEventListener("click", () => {

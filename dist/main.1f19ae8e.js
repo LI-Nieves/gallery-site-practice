@@ -117,14 +117,32 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"main.js":[function(require,module,exports) {
+})({"pic1.jpg":[function(require,module,exports) {
+module.exports = "/pic1.5e2e298f.jpg";
+},{}],"images/pic2.jpg":[function(require,module,exports) {
+module.exports = "/pic2.3734d476.jpg";
+},{}],"images/pic3.jpg":[function(require,module,exports) {
+module.exports = "/pic3.1434f408.jpg";
+},{}],"images/pic4.jpg":[function(require,module,exports) {
+module.exports = "/pic4.686169ce.jpg";
+},{}],"images/pic5.jpg":[function(require,module,exports) {
+module.exports = "/pic5.1dbc623f.jpg";
+},{}],"main.js":[function(require,module,exports) {
+"use strict";
+
+var _pic = _interopRequireDefault(require("./pic1.jpg"));
+var _pic2 = _interopRequireDefault(require("./images/pic2.jpg"));
+var _pic3 = _interopRequireDefault(require("./images/pic3.jpg"));
+var _pic4 = _interopRequireDefault(require("./images/pic4.jpg"));
+var _pic5 = _interopRequireDefault(require("./images/pic5.jpg"));
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 var displayedImage = document.querySelector('.displayed-img');
 var thumbBar = document.querySelector('.thumb-bar');
 var btn = document.querySelector('button');
 var overlay = document.querySelector('.overlay');
 
 /* Declaring the array of image filenames */
-var fileNames = ["pic1", "pic2", "pic3", "pic4", "pic5"];
+var fileNames = [_pic.default, _pic2.default, _pic3.default, _pic4.default, _pic5.default];
 
 /* Declaring the alternative text for each image file */
 var altText = ["Close-up of human eye", "Rock", "Flowers", "Heiroglyphics", "Butterfly"];
@@ -133,7 +151,8 @@ var altText = ["Close-up of human eye", "Rock", "Flowers", "Heiroglyphics", "But
 var _loop = function _loop() {
   var image = fileNames[i];
   var newImage = document.createElement('img');
-  newImage.setAttribute('src', "images/".concat(image, ".jpg"));
+  // newImage.setAttribute('src', `images/${image}.jpg`);
+  newImage.setAttribute('src', image);
   newImage.setAttribute('alt', altText[i]);
   thumbBar.appendChild(newImage);
   newImage.addEventListener("click", function () {
@@ -157,7 +176,7 @@ btn.addEventListener("click", function () {
     overlay.style.backgroundColor = "rgb(0 0 0 / 0%)";
   }
 });
-},{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./pic1.jpg":"pic1.jpg","./images/pic2.jpg":"images/pic2.jpg","./images/pic3.jpg":"images/pic3.jpg","./images/pic4.jpg":"images/pic4.jpg","./images/pic5.jpg":"images/pic5.jpg"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -182,7 +201,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "37247" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "35595" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
